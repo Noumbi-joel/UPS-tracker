@@ -6,6 +6,7 @@ import { NavigationContainer } from "@react-navigation/native";
 
 // tab navigator
 import TabNavigator from "./TabNavigator";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 
 // init Root stack
 const RootStack = createNativeStackNavigator();
@@ -18,13 +19,15 @@ export type RootStackParamList = {
 
 const RootNavigator = () => {
   return (
-    <NavigationContainer>
-      <RootStack.Navigator>
-        <RootStack.Group>
-          <RootStack.Screen name="Main" component={TabNavigator} />
-        </RootStack.Group>
-      </RootStack.Navigator>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <RootStack.Navigator screenOptions={{ headerShown: false }}>
+          <RootStack.Group>
+            <RootStack.Screen name="Main" component={TabNavigator} />
+          </RootStack.Group>
+        </RootStack.Navigator>
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 };
 
