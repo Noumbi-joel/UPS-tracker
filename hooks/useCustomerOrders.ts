@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 // apollo - graphql
 import { useQuery } from "@apollo/client";
 import { GET_ORDERS } from "../api/graphql/queries";
+import { Order, OrderResponse } from "../typings";
 
 const useCustomerOrders = (userId: string) => {
   const { loading, error, data } = useQuery(GET_ORDERS);

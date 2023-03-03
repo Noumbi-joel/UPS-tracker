@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ActivityIndicator, ScrollView, StyleSheet } from "react-native";
+import { ActivityIndicator, ScrollView, StyleSheet, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
 // rne
@@ -12,7 +12,7 @@ import useCustomers from "../../hooks/useCustomers";
 import CustomerCard from "../../components/CustomerCard";
 
 // types
-import { CustomerResponse } from "../../typings";
+import { CustomerList, CustomerResponse } from "../../typings";
 
 const CustomerScreen = () => {
   const [input, setInput] = useState<string>("");
@@ -36,11 +36,14 @@ const CustomerScreen = () => {
           containerStyle={styles.inputContainerStyle}
         />
 
-        {data?.getCustomers.map(
-          ({ name: ID, value: { email, name } }: CustomerResponse) => (
-            <CustomerCard key={ID} email={email} name={name} userId={ID} />
+        {data?.getCustomers
+          ?.filter((customer: CustomerList) =>
+            customer.value.name.includes(input)
           )
-        )}
+          .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
+            <CustomerCard key={ID} email={email} name={name} userId={ID} />
+          ))}
+        <View className="h-5" />
       </ScrollView>
     </SafeAreaView>
   );
