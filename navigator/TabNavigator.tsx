@@ -8,13 +8,13 @@ import CustomerScreen from "../screens/customer";
 import OrderScreen from "../screens/order";
 import { Icon } from "@rneui/themed";
 
-// init tab
-const Tab = createBottomTabNavigator();
-
 export type TabStackParamList = {
   Customers: undefined;
   Orders: undefined;
 };
+
+// init tab
+const Tab = createBottomTabNavigator<TabStackParamList>();
 
 const TabNavigator = () => {
   return (
@@ -25,7 +25,7 @@ const TabNavigator = () => {
         headerShown: false,
         tabBarHideOnKeyboard: true,
         tabBarIcon: ({ focused }) => {
-          if (route.name === "customers") {
+          if (route.name === "Customers") {
             return (
               <Icon
                 name="users"
@@ -34,7 +34,7 @@ const TabNavigator = () => {
               />
             );
           }
-          if (route.name === "orders") {
+          if (route.name === "Orders") {
             return (
               <Icon
                 name="box"
@@ -46,8 +46,8 @@ const TabNavigator = () => {
         },
       })}
     >
-      <Tab.Screen name="customers" component={CustomerScreen} />
-      <Tab.Screen name="orders" component={OrderScreen} />
+      <Tab.Screen name="Customers" component={CustomerScreen} />
+      <Tab.Screen name="Orders" component={OrderScreen} />
     </Tab.Navigator>
   );
 };
