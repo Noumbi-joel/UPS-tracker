@@ -20,6 +20,7 @@ const CustomerScreen = () => {
   return (
     // @ts-ignore
     <SafeAreaView className="bg-[#59C1CC] flex-1">
+      {/* Content */}
       <ScrollView>
         <Image
           source={{ uri: "https://links.papareact.com/3jc" }}
@@ -41,8 +42,18 @@ const CustomerScreen = () => {
             customer.value.name.includes(input)
           )
           .map(({ name: ID, value: { email, name } }: CustomerResponse) => (
-            <CustomerCard key={ID} email={email} name={name} userId={ID} />
+            <CustomerCard
+              key={ID}
+              email={email}
+              name={name}
+              userId={ID}
+            />
           ))}
+
+        {loading && (
+          <ActivityIndicator className="mt-5" color="white" size="large" />
+        )}
+
         <View className="h-5" />
       </ScrollView>
     </SafeAreaView>
