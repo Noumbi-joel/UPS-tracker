@@ -16,7 +16,7 @@ const RootStack = createNativeStackNavigator();
 
 export type RootStackParamList = {
   Main: undefined;
-  MyModal: { userId: string };
+  MyModal: { userId: string, name: string };
   Order: { order: any };
 };
 

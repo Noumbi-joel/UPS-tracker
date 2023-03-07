@@ -10,9 +10,6 @@ import { useNavigation } from "@react-navigation/native";
 // types
 import { CustomerNavProp } from "../../typings";
 
-// utils
-import storeModalData from "../../utils/saveModalInfos";
-
 // rne
 import { Card } from "@rneui/base";
 import { Icon } from "@rneui/themed";
@@ -27,7 +24,9 @@ const CustomerCard = ({ email, name, userId }: Props) => {
   const nav = useNavigation<CustomerNavProp>();
   const { loading, error, orders } = useCustomerOrders(userId);
   return (
-    <TouchableOpacity onPress={() => nav.navigate("MyModal", { userId })}>
+    <TouchableOpacity
+      onPress={() => nav.navigate("MyModal", { userId, name })}
+    >
       <Card containerStyle={{ padding: 20, borderRadius: 8 }}>
         <View>
           <View className="flex-row justify-between">
