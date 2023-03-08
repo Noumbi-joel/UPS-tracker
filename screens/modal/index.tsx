@@ -5,22 +5,15 @@ import { SafeAreaView } from "react-native-safe-area-context";
 // icons
 import { Icon } from "@rneui/themed";
 
-// rn nav
-import { useNavigation, useRoute, RouteProp } from "@react-navigation/native";
-import { CompositeNavigationProp } from "@react-navigation/core";
-import { BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
-import { TabStackParamList } from "../../navigator/TabNavigator";
-import { NativeStackNavigationProp } from "@react-navigation/native-stack";
-import { RootStackParamList } from "../../navigator/RootNavigator";
+// rn nav & typings
+import { useNavigation, useRoute } from "@react-navigation/native";
+import { ModalScreenNavigationProp, ModalScreenRouteProp } from "../../typings";
+
+// hooks
 import useCustomerOrders from "../../hooks/useCustomerOrders";
+
+// comp
 import DeliveryCard from "../../components/DeliveryCard";
-
-type ModalScreenNavigationProp = CompositeNavigationProp<
-  BottomTabNavigationProp<TabStackParamList>,
-  NativeStackNavigationProp<RootStackParamList, "MyModal">
->;
-
-type ModalScreenRouteProp = RouteProp<RootStackParamList, "MyModal">;
 
 const ModalScreen = () => {
   const nav = useNavigation<ModalScreenNavigationProp>();

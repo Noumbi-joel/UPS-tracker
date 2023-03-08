@@ -10,13 +10,14 @@ import TabNavigator from "./TabNavigator";
 
 // screens
 import ModalScreen from "../screens/modal";
+import OrderDetails from "../screens/orderDetails";
 
 // init Root stack
 const RootStack = createNativeStackNavigator();
 
 export type RootStackParamList = {
   Main: undefined;
-  MyModal: { userId: string, name: string };
+  MyModal: { userId: string; name: string };
   Order: { order: any };
 };
 
@@ -24,12 +25,19 @@ const RootNavigator = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
-        <RootStack.Navigator screenOptions={{ headerShown: false }}>
-          <RootStack.Group>
+        <RootStack.Navigator>
+          <RootStack.Group screenOptions={{ headerShown: false }}>
             <RootStack.Screen name="Main" component={TabNavigator} />
           </RootStack.Group>
-          <RootStack.Group screenOptions={{ presentation: "modal" }}>
+
+          <RootStack.Group
+            screenOptions={{ presentation: "modal", headerShown: false }}
+          >
             <RootStack.Screen name="MyModal" component={ModalScreen} />
+          </RootStack.Group>
+
+          <RootStack.Group>
+            <RootStack.Screen name="Order" component={OrderDetails} />
           </RootStack.Group>
         </RootStack.Navigator>
       </NavigationContainer>

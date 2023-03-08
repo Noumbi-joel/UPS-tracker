@@ -48,7 +48,21 @@ type Order = {
   City: string;
 };
 
+type ModalScreenNavigationProp = CompositeNavigationProp<
+  BottomTabNavigationProp<TabStackParamList>,
+  NativeStackNavigationProp<RootStackParamList, "MyModal">
+>;
+
 type CustomerNavProp = CompositeNavigationProp<
   BottomTabNavigationProp<TabStackParamList, "Customers">,
   NativeStackNavigationProp<RootStackParamList>
 >;
+
+type OrdersNavProp = CompositeNavigationProp<
+  BottomTabNavigationProp<TabStackParamList, "Orders">,
+  NativeStackNavigationProp<RootStackParamList>
+>;
+
+type ModalScreenRouteProp = RouteProp<RootStackParamList, "MyModal">;
+
+type OrderRouteProp = RouteProp<RootStackParamList, "Order">;
