@@ -30,9 +30,7 @@ const RootNavigator = () => {
             <RootStack.Screen name="Main" component={TabNavigator} />
           </RootStack.Group>
 
-          <RootStack.Group
-            screenOptions={{ presentation: "modal", headerShown: false }}
-          >
+          <RootStack.Group screenOptions={{ headerShown: false }}>
             <RootStack.Screen name="MyModal" component={ModalScreen} />
           </RootStack.Group>
 
