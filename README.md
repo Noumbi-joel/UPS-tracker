@@ -12,7 +12,4 @@ UPS clone @nkjy
 * On the orders navigation tab you'll get all orders delivered to the customers. This will ensure that the packages was delivered at the right places or locations.
 ## Screenshots
 
-![photo_2023-03-09_14-08-12](https://user-images.githubusercontent.com/62994009/224033000-7e148168-7dfa-48a6-a46a-f38ee95ca813.jpg)
-![photo_2023-03-09_14-08-19](https://user-images.githubusercontent.com/62994009/224033057-2b7f710f-0150-4502-a0d1-eb7db7c65039.jpg)
-![photo_2023-03-09_14-08-22](https://user-images.githubusercontent.com/62994009/224033082-b2f2aca5-6216-4a03-8a47-7fe3936830ff.jpg)
-![photo_2023-03-09_14-08-25](https://user-images.githubusercontent.com/62994009/224033118-60094bc3-e469-4cf0-a4c1-dcc6ed781902.jpg)
+Uploading vlc-record-2023-03-09-21h01m55s-video_2023-03-09_20-59-11.mp4- (1).mp4…
